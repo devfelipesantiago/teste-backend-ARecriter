@@ -6,11 +6,6 @@ import { FinancialOperationDto } from '../dto/financialOperation.dto';
 export class FinancesController {
   constructor(private readonly financesService: FinancesService) { }
 
-  @Post('credit/:clientId')
-  async creditClient(@Param('clientId') clientId: number, @Body() operationDto: FinancialOperationDto): Promise<void> {
-    await this.financesService.creditClient(clientId, operationDto.amount);
-  }
-
   @Post('debit/:clientId')
   async debitClient(@Param('clientId') clientId: number, @Body() operationDto: FinancialOperationDto): Promise<void> {
     await this.financesService.debitClient(clientId, operationDto.amount);

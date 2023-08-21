@@ -13,27 +13,6 @@ export class FinancesService {
     private readonly clientRepository: Repository<ClientEntity>,
   ) { }
 
-  async creditClient(clientId: number, amount: number): Promise<void> {
-    const client = await this.clientRepository.findOne({ where: { id: clientId } });
-
-    if (!client) {
-      throw new NotFoundException('Client not found');
-    }
-
-    client.credits += amount;
-
-    await this.clientRepository.save(client);
-
-    const operation = this.financialOperationRepository.create({
-      client,
-      type: 'credit',
-      amount,
-      timestamp: new Date(),
-    });
-
-    await this.financialOperationRepository.save(operation);
-  }
-
   async debitClient(clientId: number, amount: number): Promise<void> {
     const client = await this.clientRepository.findOne({ where: { id: clientId } });
 
