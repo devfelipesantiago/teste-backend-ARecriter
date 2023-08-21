@@ -16,7 +16,7 @@ Siga estas etapas para iniciar o projeto em sua máquina local:
 1. Clone este repositório para sua máquina local:
 
    ```bash
-   git clone https://github.com/seu-usuario/bcb-project.git
+   git@github.com:devfelipesantiago/teste-backend-ARecriter.git
    cd bcb-project
 
 2. Instale as dependências do projeto:
