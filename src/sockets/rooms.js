@@ -1,5 +1,4 @@
-export default (io) => io.on('connection', (socket) => {
-
+module.exports = (io) => io.on('connection', (socket) => {
   socket.on('joinRoom', ({ username, room }) => {
     socket.join(room);
 

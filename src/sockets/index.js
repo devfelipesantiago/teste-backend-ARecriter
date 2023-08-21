@@ -1,4 +1,5 @@
-import express, { static } from 'express';
+const express = require('express');
+
 const app = express();
 const http = require('http').createServer(app);
 
@@ -9,14 +10,13 @@ const io = require('socket.io')(http, {
   },
 });
 
-app.use(static(__dirname + '/public'));
+app.use(express.static(__dirname + '/public'));
 
-require('./sockets/ping')(io);
-require('./sockets/chat')(io);
-require('./sockets/rooms')(io);
+require('./chat')(io);
+require('./rooms.js')(io);
 
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/index.html');
+  res.sendFile(__dirname + '../public/entrar.html');
 });
 
 http.listen(3000, () => {

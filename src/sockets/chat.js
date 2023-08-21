@@ -1,5 +1,4 @@
-export default (io) => io.on('connection', (socket) => {
-
+module.exports = (io) => io.on('connection', (socket) => {
   socket.emit('serverMessage', 'Olá, seja bem vindo ao nosso chat público! Use essa página para conversar a vontade.');
 
   socket.broadcast.emit('serverMessage', { mensagem: `Iiiiiirraaaa! ${socket.id} acabou de se conectar :D` });
