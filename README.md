@@ -1,3 +1,40 @@
+# BCB - Big Chat Brasil
+
+Bem-vindo ao BCB (Big Chat Brasil), uma plataforma para envio de SMS e outras mensagens no Brasil. Esta plataforma permite que os clientes enviem mensagens para seus usuários finais por meio da web ou dispositivos móveis.
+
+## Como Iniciar o Projeto
+
+Siga estas etapas para iniciar o projeto em sua máquina local:
+
+### Pré-requisitos
+
+- Node.js (v14 ou superior)
+- Docker e Docker Compose
+
+### Passos
+
+1. Clone este repositório para sua máquina local:
+
+   ```bash
+   git clone https://github.com/seu-usuario/bcb-project.git
+   cd bcb-project
+
+2. Instale as dependências do projeto:
+   ```bash
+   npm install
+
+3. Inicie o banco de dados PostgreSQL usando o Docker Compose:
+   ```bash
+   docker-compose up -d
+
+4. Execute a aplicação:
+
+   ```bash
+   npm run start:dev
+
+
+## Descrição do teste
+
 Boa tarde <CANDIDATO/A>, conforme falamos hoje, segue o descritivo para criação do projeto simplificado de teste;
 Com base nele faremos nossa entrevista técnica com live-coding dia DATA+HORA
 Pode avisar o término por e-mail ou Whats, e subir no GitHub em um repositório public. Prazo até nossa call 
